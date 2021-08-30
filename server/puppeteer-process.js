@@ -16,7 +16,7 @@ async function sendUrl(idUrl) {
 
     return infosend;
   });
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
   const page = await browser.newPage();
   await page.goto(`https://www.y2meta.com/youtube-to-mp3/${idUrl}`);
 
