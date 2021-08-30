@@ -118,12 +118,12 @@
           </transition>
           <transition name="fade">
             <div
-              class="card w-50 bg-2"
+              class="card w-md-50 bg-2"
               v-if="this.videoInfo != '' && this.statusProcess === false"
             >
               <div class="container">
                 <div class="row">
-                  <div class="col-5 mt-3">
+                  <div class="col-md-5 col-12 my-3">
                     <img
                       :src="this.videoInfo.thumbnails[4].url"
                       v-bind:alt="
@@ -147,7 +147,7 @@
                     <a
                       v-bind:href="this.downloadlink"
                       target="_blank"
-                      class="btn bg-3 btn-block text-white mb-1"
+                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
                       Descargar Ahora
                     </a>
@@ -585,6 +585,12 @@ export default {
 </script>
 
 <style>
+@media (min-width: 768px) {
+  .w-md-50 {
+    width: 50vw !important;
+  }
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
