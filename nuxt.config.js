@@ -15,7 +15,8 @@ module.exports = {
       },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/logo.pgn" },
+
       {
         rel: "stylesheet",
         type: "text/css",
@@ -71,7 +72,7 @@ module.exports = {
         name: "main", // give it a name that we can later use to choose this socket in the .vue file
         url:
           process.env.NODE_ENV === "production"
-            ? "https://nuxt-express-socket.herokuapp.com"
+            ? "https://youtube-downloader-jabibi.herokuapp.com"
             : "http://localhost:3000",
       },
     ],
