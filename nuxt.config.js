@@ -80,14 +80,14 @@ module.exports = {
 
   pwa: {
     manifest: {
-      name: process.env.npm_package_name,
-      short_name: process.env.npm_package_name,
+      name: "Youtube Downloader by Jabibi",
+      short_name: "Youtube Downloader",
       start_url: "/",
       theme_color: "#424242",
       display: "standalone",
     },
     icon: {
-      iconSrc: "./static/favicon.ico",
+      iconSrc: "./static/logo.png",
     },
   },
   /*
