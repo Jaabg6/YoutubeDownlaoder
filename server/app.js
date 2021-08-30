@@ -7,7 +7,7 @@ const io = require("socket.io")(server, {
 
 io.on("connection", (socket) => {
   console.log("conectado en backend");
-  io.emit("event-frontend");
+  socket.emit("event-frontend");
 
   socket.on("sendUrl", (idUrl) => {
     // console.log(url);
@@ -23,9 +23,9 @@ io.on("connection", (socket) => {
         thumbnails: (await urlForDownload.videoInfo).thumbnails,
       };
       // console.log((await urlForDownload.videoInfo).title);
-      io.emit("infoVideo", videoInfo);
+      socket.emit("infoVideo", videoInfo);
 
-      io.emit("urlDownload", urlForDownload.link);
+      socket.emit("urlDownload", urlForDownload.link);
     }
     send();
   });
