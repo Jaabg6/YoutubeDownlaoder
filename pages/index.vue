@@ -472,7 +472,7 @@ export default {
     });
 
     this.socket.on("event-frontend", () => {
-      console.log("Backend Working :D");
+      console.log("Backend Working :D , v2");
     });
 
     this.socket.on("urlDownload", (urlForDownload) => {
