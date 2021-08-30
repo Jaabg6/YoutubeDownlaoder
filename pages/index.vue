@@ -471,6 +471,10 @@ export default {
       console.log("socket-io-client conected");
     });
 
+    this.socket.on("event-frontend", () => {
+      console.log("Backend Working");
+    });
+
     this.socket.on("urlDownload", (urlForDownload) => {
       this.downloadlink = urlForDownload;
       this.statusProcess = false;
