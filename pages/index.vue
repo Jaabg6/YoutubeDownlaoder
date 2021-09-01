@@ -483,18 +483,18 @@ export default {
       this.downloadlink = urlForDownload;
       this.statusProcess = false;
 
-      console.log("url: " + urlForDownload);
+      // console.log("url: " + urlForDownload);
     });
     // io.emit("sendInfoMp3", DireccionVideo);
 
     this.socket.on("infoVideo", (videoInfo) => {
       this.videoInfo = videoInfo;
       this.videoDuration = format(videoInfo.duration * 1000);
-      console.log(
-        "info: " + videoInfo.title,
-        videoInfo.duration,
-        videoInfo.thumbnails
-      );
+      // console.log(
+      //   "info: " + videoInfo.title,
+      //   videoInfo.duration,
+      //   videoInfo.thumbnails
+      // );
     });
   },
   methods: {
@@ -515,7 +515,7 @@ export default {
     ShowDonwloadURL(url) {
       this.downloadlink = url;
       this.statusProcess = false;
-      console.log(url + "se muestra");
+      // console.log(url + "se muestra");
     },
     // obtenerLink(RefFile){
     //   RefFile.getDownloadURL().then(function(url) {

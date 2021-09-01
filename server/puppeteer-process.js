@@ -17,7 +17,7 @@ async function sendUrl(idUrl) {
     return infosend;
   });
   const browser = await puppeteer.launch({
-    headless: false,
+    // headless: false,
     args: ["--no-sandbox"],
   });
   const page = await browser.newPage();
