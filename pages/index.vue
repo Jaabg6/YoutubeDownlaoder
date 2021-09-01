@@ -125,7 +125,11 @@
                 <div class="row">
                   <div class="col-md-5 col-12 my-3">
                     <img
-                      :src="this.videoInfo.thumbnails[4].url"
+                      :src="
+                        this.videoInfo.thumbnails[
+                          this.videoInfo.thumbnails.length - 1
+                        ].url
+                      "
                       v-bind:alt="
                         'Descargar ' + this.videoInfo.title + ' mp3 gratis'
                       "
@@ -479,14 +483,18 @@ export default {
       this.downloadlink = urlForDownload;
       this.statusProcess = false;
 
-      // console.log();
+      console.log("url: " + urlForDownload);
     });
     // io.emit("sendInfoMp3", DireccionVideo);
 
     this.socket.on("infoVideo", (videoInfo) => {
       this.videoInfo = videoInfo;
       this.videoDuration = format(videoInfo.duration * 1000);
-      // console.log(videoInfo);
+      console.log(
+        "info: " + videoInfo.title,
+        videoInfo.duration,
+        videoInfo.thumbnails
+      );
     });
   },
   methods: {

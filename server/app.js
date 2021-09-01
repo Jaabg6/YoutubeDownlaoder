@@ -13,6 +13,7 @@ io.on("connection", (socket) => {
     // console.log(url);
     async function send() {
       var urlForDownload = await sendUrl(idUrl);
+      console.log(urlForDownload);
       // console.log(urlForDownload.link);
       // console.log(urlForDownload.InfoVideo.title);
       // console.log(urlForDownload.InfoVideo.duration);
