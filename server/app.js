@@ -13,20 +13,26 @@ io.on("connection", (socket) => {
     // console.log(url);
     async function send() {
       var urlForDownload = await sendUrl(idUrl);
-      console.log(urlForDownload);
+      // console.log(urlForDownload);
       // console.log(urlForDownload.link);
       // console.log(urlForDownload.InfoVideo.title);
       // console.log(urlForDownload.InfoVideo.duration);
       // console.log(urlForDownload.InfoVideo.thumnail);
-      var videoInfo = {
-        title: (await urlForDownload.videoInfo).title,
-        duration: (await urlForDownload.videoInfo).duration,
-        thumbnails: (await urlForDownload.videoInfo).thumbnails,
-      };
+      // console.log(urlForDownload.videoInfo);
       // console.log((await urlForDownload.videoInfo).title);
-      socket.emit("infoVideo", videoInfo);
+      if (urlForDownload) {
+        var videoInfo = {
+          title: (await urlForDownload.videoInfo).title,
+          duration: (await urlForDownload.videoInfo).duration,
+          thumbnails: (await urlForDownload.videoInfo).thumbnails,
+        };
 
-      socket.emit("urlDownload", urlForDownload.link);
+        socket.emit("infoVideo", videoInfo);
+
+        socket.emit("urlDownload", urlForDownload.link);
+      } else {
+        socket.emit("VideoNoEncontrado");
+      }
     }
     send();
   });

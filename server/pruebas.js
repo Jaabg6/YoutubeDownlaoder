@@ -40,6 +40,31 @@ const puppeteer = require("puppeteer");
     return arreglo;
   });
 
+  await page.evaluate(() => {
+    document.querySelector("#moretab tr").querySelector("button").click();
+  });
+
+  await page.waitForSelector(".btn-download-link");
+
+  const HQlink = await page.evaluate(() => {
+    const HQlink = document.querySelector(".btn-download-link").href;
+    document.querySelector(".btn-download-close").click();
+
+    return HQlink;
+  });
+
+  //   listo el tercero, falta hacer el primero
+  await page.evaluate(() => {
+    document.querySelectorAll("#moretab tr")[2].querySelector("button").click();
+  });
+
+  await page.waitForSelector(".btn-download-link");
+
+  const tQlink = await page.evaluate(() => {
+    const tQlink = document.querySelector(".btn-download-link").href;
+    return tQlink;
+  });
+
   //   listo el tercero, falta hacer el primero
   await page.evaluate(() => {
     document.querySelectorAll("#moretab tr")[3].querySelector("button").click();
@@ -53,6 +78,8 @@ const puppeteer = require("puppeteer");
   });
   //   console.log(link.HQbutton);
   //   await page.click(link.HQ.querySelector(".btn-download-size"));
+  console.log(HQlink);
+  console.log(tQlink);
 
   console.log(MQlink);
 

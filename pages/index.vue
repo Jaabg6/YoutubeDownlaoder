@@ -1,121 +1,25 @@
 <template>
   <div class="home">
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-light fixed-top m-navbar"
-    >
-      <!-- Container wrapper -->
-      <div class="container">
-        <!-- Toggle button -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarButtonsExample"
-          aria-controls="navbarButtonsExample"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="d-flex align-items-center d-md-none">
-          <button
-            type="button"
-            class="btn btn-primary me-3 bg-3"
-            @click="mensaje()"
-          >
-            Start to convert
-          </button>
-        </div>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarButtonsExample">
-          <!-- Left links -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#"
-                >You-Downloader mp3</a
-              >
-            </li>
-          </ul>
-          <!-- Left links -->
-
-          <div class="d-flex align-items-center">
-            <button
-              type="button"
-              class="btn btn-primary me-3 bg-3"
-              @click="mensaje()"
-            >
-              Start to convert
-            </button>
-          </div>
-        </div>
-        <!-- Collapsible wrapper -->
-      </div>
-      <!-- Container wrapper -->
-    </nav>
-    <div class="m-navbar"></div>
+    <Navbar />
     <!-- Navbar -->
 
+    <!-- para test -->
+    <!-- <div class="alert alert-danger" role="alert">
+      <span
+        class="glyphicon glyphicon-exclamation-sign"
+        aria-hidden="true"
+      ></span>
+      <span class="sr-only">Error: </span>Se ha producido un error. ¡Inténtalo
+      de nuevo!
+    </div> -->
+
     <div class="container">
-      <div class="card bg-2 mt-5 py-4 px-5">
-        <form v-on:submit.prevent="sendUrl" class="text-white">
-          <!-- Name input -->
-          <div class="form-outline mb-4">
-            <input
-              @paste="onPaste"
-              v-model="urlVideo"
-              type="text"
-              ref="inputLink"
-              id="inputLink"
-              class="form-control bg-white"
-            />
-            <label class="form-label text-dark" for="inputLink">Link</label>
-          </div>
-
-          <!-- Submit button -->
-          <button type="submit" class="btn bg-3 btn-block text-white">
-            Enviar
-          </button>
-
-          <transition name="fade">
-            <div v-if="this.errorLinkMessage === true">
-              <div class="alert alert-danger mt-2" role="alert">
-                A donde vaaas? Pon un link de youtube valido antes de enviar ;D
-              </div>
-            </div>
-          </transition>
-          <transition name="fade">
-            <div v-if="this.errorVideoNoEncontrado === true">
-              <div class="alert alert-danger mt-2" role="alert">
-                Parece que hubo un error grave, revisa el link que usaste y
-                sigue intentando :D
-              </div>
-            </div>
-          </transition>
-          <transition name="fade">
-            <div v-if="this.errorWaitingResponse === true">
-              <div class="alert alert-danger mt-2" role="alert">
-                Heeeey, tranqui, cuando termine envias otro :p
-              </div>
-            </div>
-          </transition>
-        </form>
-      </div>
+      <SearchBar />
 
       <div class="text-white text-center mt-5">
         <div class="d-flex justify-content-center mb-5">
-          <transition name="bounce">
-            <div class="card w-50 bg-2" v-if="this.statusProcess === true">
-              <div class="card-body my-3">
-                <p class="h1">{{ countdown }}</p>
-                <!-- <button type="button" class="btn btn-primary">Button</button> -->
-                <div class="spinner-border text-danger" role="status">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-              </div>
-            </div>
-          </transition>
+          <CardLoading />
           <transition name="fade">
             <div
               class="card w-md-50 bg-2"
@@ -139,7 +43,12 @@
                   <div class="card-body col-7">
                     <!-- <p class="h1">{{ this.videoInfo }}</p> -->
                     <p
-                      class="font-weight-bold d-flex justify-content-left text-left"
+                      class="
+                        font-weight-bold
+                        d-flex
+                        justify-content-left
+                        text-left
+                      "
                     >
                       {{ this.videoInfo.title }}
                     </p>
@@ -151,7 +60,15 @@
                     <a
                       v-bind:href="this.downloadlink"
                       target="_blank"
-                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
+                      class="
+                        btn
+                        bg-3
+                        btn-block
+                        text-white
+                        mb-1
+                        d-flex
+                        align-items-end
+                      "
                     >
                       Descargar Ahora
                     </a>
@@ -161,9 +78,7 @@
             </div>
           </transition>
         </div>
-        <h1 class="mb-5">
-          Descarga mp3 de youtube en alta calidad
-        </h1>
+        <h1 class="mb-5">Descarga mp3 de youtube en alta calidad</h1>
 
         <div class="d-flex justify-content-center">
           <h4>Pasos para descargar desde:</h4>
@@ -347,100 +262,17 @@
       </div>
     </div>
 
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
-    <bt></bt>
     <!-- Footer -->
-    <footer class="bg-dark text-center text-white mt-5">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!-- Section: Text -->
-        <section class="mb-4">
-          <p>
-            Descarga facilmente musica de youtube de manera ilimitada, facil de
-            usar y resposive para todas las plataformas, puedes instalarla en tu
-            PC o Android para acceder con mayor facilidad
-          </p>
-        </section>
-        <!-- Section: Text -->
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-
-          <!-- Twitter -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-twitter"></i
-          ></a>
-
-          <!-- Google -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-google"></i
-          ></a>
-
-          <!-- Instagram -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-instagram"></i
-          ></a>
-
-          <!-- Linkedin -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-
-          <!-- Github -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-github"></i
-          ></a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
-      <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div
-        class="text-center p-3"
-        style="background-color: rgba(0, 0, 0, 0.2);"
-      >
-        © 2021 Creado por Jabibi
-        <a class="text-danger" href="https://javierarcila.web.app/">
-          <span class="text-white">-</span> Ir al Portafolio</a
-        >
-      </div>
-      <!-- Copyright -->
-    </footer>
+    <Footer />
     <!-- Footer -->
   </div>
 </template>
 
 <script>
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import SearchBar from "../components/SearchBar";
+import CardLoading from "../components/CardLoading";
 var format = require("format-duration");
 export default {
   name: "Home",
@@ -462,9 +294,16 @@ export default {
       errorWaitingResponse: false,
     };
   },
-  components: {},
+  components: {
+    Navbar,
+    SearchBar,
+    CardLoading,
+    Footer,
+  },
 
   async mounted() {
+    this.scrollBehavior();
+
     this.socket = this.$nuxtSocket({
       name: "main", // select "main" socket from nuxt.config.js - we could also skip this because "main" is the default socket
     });
@@ -479,12 +318,20 @@ export default {
       console.log("Backend Working");
     });
 
+    this.socket.on("VideoNoEncontrado", () => {
+      this.errorVideoNoEncontrado = true;
+      setTimeout(() => {
+        this.errorVideoNoEncontrado = false;
+      }, 5000);
+    });
+
     this.socket.on("urlDownload", (urlForDownload) => {
       this.downloadlink = urlForDownload;
       this.statusProcess = false;
 
       // console.log("url: " + urlForDownload);
     });
+
     // io.emit("sendInfoMp3", DireccionVideo);
 
     this.socket.on("infoVideo", (videoInfo) => {
@@ -498,6 +345,9 @@ export default {
     });
   },
   methods: {
+    scrollBehavior() {
+      return { x: 0, y: 0 };
+    },
     // startAgain() {
     //   // this.urlVideo = "";
     //   // this.downloadlink = "";
@@ -547,12 +397,11 @@ export default {
     ChangePreferencesMobile() {
       this.DownloadPreferences = "Mobile";
     },
-    mensaje() {
-      this.$refs.inputLink.focus();
-    },
+
     async sendUrl() {
       if (this.statusProcess === false) {
-        var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+        var p =
+          /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         if (this.urlVideo.match(p)) {
           console.log("hi you want download" + this.urlVideo);
           this.videoInfo = "";
@@ -605,10 +454,6 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-}
-
-.m-navbar {
-  margin-bottom: 100px !important;
 }
 
 #app {
