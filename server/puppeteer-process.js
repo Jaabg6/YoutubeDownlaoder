@@ -1,4 +1,6 @@
-// const puppeteer = require("puppeteer");
+//  const puppeteer = require("puppeteer");
+// "puppeteer": "^10.2.0",
+ const cheerio = require('cheerio');
 // "puppeteer": "^10.2.0",
 const axios = require("axios");
 
@@ -21,47 +23,58 @@ async function sendUrl(idUrl) {
     return infosend;
   });
 
-  const link = await axios
-    .get(
-      "https://mhankbarbar.herokuapp.com/api/yta?url=https://youtu.be/f5aDUB1NCnk"
-    )
-    .then(function (response) {
-      // handle success
 
-      return response.data.result;
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
-  // console.log(link);
-  // const browser = await puppeteer.launch({
-  //   headless: false,
-  //   args: ["--no-sandbox"],
-  // });
-  // const page = await browser.newPage();
-  // await page.goto(pagescrape);
+  // body > div.container.mx-auto.lg\:px-16.py-4.pb-0 > div > div > div > a:nth-child(1) > div:nth-child(4)
+     const link = await axios
+       .get(
+         `https://www.yt-download.org/api/button/mp3/${idUrl}`
+       )
+       .then(function (response) {
+         let $ = cheerio.load(response.data);
+         var AllLinks = []
+        $('a').each(function (i, e) {
+          let links = $(e).attr('href');
+          // let size = $(e).contents().text()
+          //  console.log(size)
+          //  console.log(links);
+          AllLinks.push(links);
 
-  // await page.waitForSelector("#process_mp3");
+      })
 
-  // await page.click("#process_mp3");
+      return AllLinks;
+        //  const bro = response.data
+        // console.log(bro)
+        //  return response.data.result;
+       })
+       .catch(function (error) {
+         // handle error
+         console.log(error);
+       });
 
-  // const downloadButton = await page
-  //   .waitForSelector(".btn-download-link", { waitUntil: "load" })
-  //   .catch((error) => {
-  //     browser.close();
-  //     return "error";
-  //   });
-  // if (downloadButton === "error") return;
-  // // console.log(buttonDownload);
 
-  // const link = await page.evaluate(() => {
-  //   const urlVideo = document.querySelector(".btn-download-link").href;
-  //   const customisedElement = urlVideo.replace("y2meta.com", "Jabibi");
-  //   return customisedElement;
-  // });
 
-  // await browser.close();
+  //  console.log(link);
+    //  const browser = await puppeteer.launch({
+    //    headless: false,
+    //    args: ["--no-sandbox"],
+    //  });
+    //  const page = await browser.newPage();
+    //  await page.goto(`https://www.yt-download.org/api/button/mp3/${idUrl}`);
+    //  //  await page.waitForSelector("body > div > div > div > div > a:nth-child(1)")
+    //  const downloadButton = await page
+    //    .waitForSelector("body > div > div > div > div > a:nth-child(1)")
+    //    .catch((error) => {
+    //      browser.close();
+    //      return "error";
+    //    });
+    //  if (downloadButton === "error") return;
+    //  // console.log(buttonDownload);
+    //  const link = await page.evaluate(() => {
+    //    const urlVideo = document.querySelector("body > div > div > div > div > a:nth-child(1)").href;
+    //   //  const customisedElement = urlVideo.replace("y2meta.com", "Jabibi");
+    //    return urlVideo;
+    //  });
+    //  await browser.close();
 
   return { link, videoInfo };
 

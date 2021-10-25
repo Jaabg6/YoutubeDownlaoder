@@ -2,6 +2,7 @@
   <div class="home">
     <!-- Navbar -->
     <Navbar />
+
     <!-- Navbar -->
 
     <!-- para test -->
@@ -21,6 +22,7 @@
         <div class="d-flex justify-content-center mb-5">
           <CardLoading />
           <transition name="fade">
+            
             <div
               class="card w-md-50 bg-2"
               v-if="this.videoInfo != '' && this.statusProcess === false"
@@ -39,16 +41,15 @@
                       "
                       class="img-fluid"
                     />
+                    <!-- <div v-if="this.AnimationDownloading">Hi</div> -->
+                    <div v-if="this.AnimationDownloading" class="spinner-grow text-danger mt-5" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
                   </div>
                   <div class="card-body col-7">
                     <!-- <p class="h1">{{ this.videoInfo }}</p> -->
                     <p
-                      class="
-                        font-weight-bold
-                        d-flex
-                        justify-content-left
-                        text-left
-                      "
+                      class="font-weight-bold d-flex justify-content-left text-left"
                     >
                       {{ this.videoInfo.title }}
                     </p>
@@ -58,20 +59,49 @@
                     </p>
 
                     <a
-                      v-bind:href="this.downloadlink"
-                      target="_blank"
-                      class="
-                        btn
-                        bg-3
-                        btn-block
-                        text-white
-                        mb-1
-                        d-flex
-                        align-items-end
-                      "
+                      :href="this.downloadlink[0]"
+                      @click="StartAnimationDownloading"
+                      download="estevideoloco"
+                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
-                      Descargar Ahora
+                    Descargar Ahora {{ this.downloadlink[0].substr(53,3)}} kbps
                     </a>
+                    <a
+                      :href="this.downloadlink[1]"
+                      v-if="this.downloadlink[1]"
+                      @click="StartAnimationDownloading"
+
+                      
+                      download="estevideoloco"
+                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
+                    >
+                    Descargar Ahora {{ this.downloadlink[1].substr(53,3)}} kbps
+                    </a>
+                    <a
+                      :href="this.downloadlink[2]"
+                      v-if="this.downloadlink[2]"
+                      @click="StartAnimationDownloading"
+                      
+                      download="estevideoloco"
+                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
+                    >
+                    Descargar Ahora {{ this.downloadlink[2].substr(53,3)}} kbps
+                    </a>
+                    <a
+                      :href="this.downloadlink[3]"
+                      v-if="this.downloadlink[3]"
+                      @click="StartAnimationDownloading"
+
+                      download="estevideoloco"
+                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
+                    >
+                    Descargar Ahora {{ this.downloadlink[3].substr(53,3)}} kbps
+                    </a>
+                    
+    <!-- <iframe id="brocoli" :src="`https://api.vevioz.com/@api/button/mp3/320/${idUrl}`" ref="buttonDonwloadRef" class="d-opacity" scrolling="no"></iframe> -->
+                    
+
+                    
                   </div>
                 </div>
               </div>
@@ -278,11 +308,13 @@ export default {
   name: "Home",
   data() {
     return {
+      idUrl: "",
       urlVideo: "",
       videoInfo: "",
       videoDuration: 0,
       downloadlink: "",
       statusProcess: false,
+      AnimationDownloading: false,
       DownloadPreferences: "PC",
       passN1: true,
       passN2: false,
@@ -345,6 +377,21 @@ export default {
     });
   },
   methods: {
+
+    StartAnimationDownloading(){
+      this.AnimationDownloading = true;
+      setTimeout(() => {
+      this.AnimationDownloading = false;
+        
+      }, 5000);
+    },
+
+    openLink(){
+       var bro = this.$refs.buttonDonwloadRef.contentWindow.document.getElementById('#mediaDownload');
+       
+       console.log(bro)
+      console.log("si entra", this.$refs.buttonDonwloadRef)
+    },
     scrollBehavior() {
       return { x: 0, y: 0 };
     },
@@ -400,14 +447,14 @@ export default {
 
     async sendUrl() {
       if (this.statusProcess === false) {
-        var p =
-          /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+        var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         if (this.urlVideo.match(p)) {
           console.log("hi you want download" + this.urlVideo);
           this.videoInfo = "";
           this.videoDuration = 0;
           this.downloadlink = "";
           var idUrl = this.urlVideo.slice(-11);
+          this.idUrl = idUrl
           // console.log("la id es: " + this.urlVideo.slice(-11));
           this.socket.emit("sendUrl", idUrl);
           this.statusProcess = true;
@@ -442,6 +489,17 @@ export default {
 </script>
 
 <style>
+.media-type-mp3-320{
+  background: rgb(255, 6, 6) !important;
+  color:rgb(255, 6, 6) !important;
+}
+.d-opacity{
+  /* filter: drop-shadow(4px 4px red); */
+  filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-1500deg) saturate(600%) contrast(0.8);
+  /* filter: grayscale(2); */
+  /* width: 100%; */
+  /* height: 10px; */
+}
 @media (min-width: 768px) {
   .w-md-50 {
     width: 50vw !important;
@@ -478,10 +536,10 @@ export default {
 }
 
 .bounce-enter-active {
-  animation: bounce-in 0.5s;
+  StartAnimation: bounce-in 0.5s;
 }
 .bounce-leave-active {
-  animation: bounce-in 0s reverse;
+  StartAnimation: bounce-in 0s reverse;
 }
 @keyframes bounce-in {
   0% {
@@ -495,7 +553,7 @@ export default {
   }
 }
 
-/* Enter and leave animations can use different */
+/* Enter and leave StartAnimations can use different */
 /* durations and timing functions.              */
 .bounce-enter-active {
   transition: all 0.8s ease;

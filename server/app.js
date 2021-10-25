@@ -1,4 +1,5 @@
 const { sendUrl } = require("./puppeteer-process");
+const axios = require("axios");
 const app = require("express")();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
@@ -8,6 +9,19 @@ const io = require("socket.io")(server, {
 io.on("connection", (socket) => {
   console.log("conectado en backend");
   socket.emit("event-frontend");
+
+  //   axios({
+  //     url: 'http://api.dev/file-download', //your url
+  //     method: 'GET',
+  //     responseType: 'blob', // important
+  // }).then((response) => {
+  //     const url = window.URL.createObjectURL(new Blob([response.data]));
+  //     const link = document.createElement('a');
+  //     link.href = url;
+  //     link.setAttribute('download', 'file.pdf'); //or any other extension
+  //     document.body.appendChild(link);
+  //     link.click();
+  // });
 
   socket.on("sendUrl", (idUrl) => {
     // console.log(url);
