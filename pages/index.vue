@@ -60,7 +60,7 @@
 
                     <a
                       :href="this.downloadlink[0].slice(4, -2)"
-                      target='_blank'
+                     
                       @click="StartAnimationDownloading"
                       download="estevideoloco"
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
