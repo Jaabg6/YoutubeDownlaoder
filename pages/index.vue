@@ -59,13 +59,13 @@
                     </p>
 
                     <a
-                      :href="this.downloadlink[0]"
+                      :href="this.downloadlink[0].slice(4, -2)"
                       target='_blank'
                       @click="StartAnimationDownloading"
                       download="estevideoloco"
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
-                    Descargar Ahora {{ this.downloadlink[0].substr(53,3)}} kbps
+                    Descargar Ahora
                     </a>
                     <a
                       :href="this.downloadlink[1]"
@@ -104,6 +104,7 @@
                     
     <!-- <iframe id="brocoli" :src="`https://api.vevioz.com/@api/button/mp3/320/${idUrl}`" ref="buttonDonwloadRef" class="d-opacity" scrolling="no"></iframe> -->
                     
+
 
                     
                   </div>

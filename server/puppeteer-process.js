@@ -23,17 +23,18 @@ async function sendUrl(idUrl) {
     return infosend;
   });
 
+  // `https://www.yt-download.org/api/button/mp3/${idUrl}`
 
   // body > div.container.mx-auto.lg\:px-16.py-4.pb-0 > div > div > div > a:nth-child(1) > div:nth-child(4)
      const link = await axios
        .get(
-         `https://www.yt-download.org/api/button/mp3/${idUrl}`
+         `https://api.tubemp3.biz/audio/${idUrl}`
        )
        .then(function (response) {
          let $ = cheerio.load(response.data);
          var AllLinks = []
         $('a').each(function (i, e) {
-          let links = $(e).attr('href');
+          let links = $(e).attr('onclick');
           // let size = $(e).contents().text()
           //  console.log(size)
           //  console.log(links);
