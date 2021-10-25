@@ -60,6 +60,7 @@
 
                     <a
                       :href="this.downloadlink[0]"
+                      target='_blank'
                       @click="StartAnimationDownloading"
                       download="estevideoloco"
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
@@ -68,6 +69,7 @@
                     </a>
                     <a
                       :href="this.downloadlink[1]"
+                      target='_blank'
                       v-if="this.downloadlink[1]"
                       @click="StartAnimationDownloading"
 
@@ -80,6 +82,7 @@
                     <a
                       :href="this.downloadlink[2]"
                       v-if="this.downloadlink[2]"
+                      target='_blank'
                       @click="StartAnimationDownloading"
                       
                       download="estevideoloco"
@@ -90,6 +93,7 @@
                     <a
                       :href="this.downloadlink[3]"
                       v-if="this.downloadlink[3]"
+                      target='_blank'
                       @click="StartAnimationDownloading"
 
                       download="estevideoloco"
