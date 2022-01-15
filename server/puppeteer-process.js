@@ -19,9 +19,10 @@ async function sendUrl(idUrl) {
       duration,
       thumbnails,
     };
-
     return infosend;
   });
+    
+  
 
   // `https://www.yt-download.org/api/button/mp3/${idUrl}`
 

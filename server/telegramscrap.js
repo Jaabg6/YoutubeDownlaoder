@@ -1,23 +1,21 @@
-// const puppeteer = require("puppeteer");
+ const puppeteer = require("puppeteer");
+ var url = "https://platzi.com/web/";
+ (async () => {
+   const browser = await puppeteer.launch({
+     headless: false,
+     args: ["--no-sandbox", "--disable-setuid-sandbox"]
+     // args: ["--no-sandbox"],
+   });
+   const page = await browser.newPage();
+   // convert to mp3 /${idUrl}`
+    await page.goto(url);
+    await page.waitForSelector(".RoutesList-item-name");
 
-// (async () => {
-//   const browser = await puppeteer.launch({
-//     headless: false,
-//     // args: ["--no-sandbox"],
-//   });
-//   const page = await browser.newPage();
-//   await page.goto(`https://web.telegram.org/`);
-//   //   await page.waitForSelector(".gButtonPepeLucho");
-//   //   await page.click(".gButtonPepeLucho");
-// //   await page.waitForSelector(".b1CompraVenta");
-// //   const cambioDelDia = await page.evaluate(() => {
-// //     const compra = document.querySelector(".pCompra").innerText;
-// //     const venta = document.querySelector(".pVenta").innerText;
-
-// //     return { compra, venta };
-// //   });
-// //   console.log("compra: " + cambioDelDia.compra);
-// //   console.log("venta: " + cambioDelDia.venta);
-
-// //   await browser.close();
-// })();
+    const courses = await page.evaluate(() => {
+        const courses = Array.from(document.querySelectorAll(".RoutesList-item-name"));
+        //const levels = Array.from(document.querySelectorAll(".RoutesList-item-level"));
+        return courses.map(course => course.innerText);
+    })
+    //console.log of each course of courses
+    courses.forEach(course => console.log(course));
+ })();
