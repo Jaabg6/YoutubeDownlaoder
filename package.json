@@ -1,6 +1,9 @@
 {
   "name": "youtube-downloader-jabibi",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.13.0"
+  },
   "description": "Description",
   "author": "Jabibi",
   "private": false,
