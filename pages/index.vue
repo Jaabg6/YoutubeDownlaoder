@@ -59,10 +59,10 @@
                     </p>
 
                     <a
-                      :href="this.downloadlink[0].slice(4, -2)"
+                      :href="this.downloadlink[0]"
                      
                       @click="StartAnimationDownloading"
-                      download="estevideoloco"
+                      download=""
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
                     Descargar Ahora
@@ -74,10 +74,10 @@
                       @click="StartAnimationDownloading"
 
                       
-                      download="estevideoloco"
+                      download=""
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
-                    Descargar Ahora {{ this.downloadlink[1].substr(53,3)}} kbps
+                    Descargar Ahora {{ this.downloadlink[1].substr(51,3)}} kbps
                     </a>
                     <a
                       :href="this.downloadlink[2]"
@@ -85,10 +85,10 @@
                       target='_blank'
                       @click="StartAnimationDownloading"
                       
-                      download="estevideoloco"
+                      download=""
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
-                    Descargar Ahora {{ this.downloadlink[2].substr(53,3)}} kbps
+                    Descargar Ahora {{ this.downloadlink[2].substr(51,3)}} kbps
                     </a>
                     <a
                       :href="this.downloadlink[3]"
@@ -96,14 +96,13 @@
                       target='_blank'
                       @click="StartAnimationDownloading"
 
-                      download="estevideoloco"
+                      download=""
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
-                    Descargar Ahora {{ this.downloadlink[3].substr(53,3)}} kbps
+                    Descargar Ahora {{ this.downloadlink[3].substr(51,3)}} kbps
                     </a>
-                    
-    <!-- <iframe id="brocoli" :src="`https://api.vevioz.com/@api/button/mp3/320/${idUrl}`" ref="buttonDonwloadRef" class="d-opacity" scrolling="no"></iframe> -->
-                    
+
+                     
 
 
                     
