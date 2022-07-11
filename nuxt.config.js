@@ -72,7 +72,7 @@ module.exports = {
         name: "main", // give it a name that we can later use to choose this socket in the .vue file
         url:
           process.env.NODE_ENV === "production"
-            ? "https://youtube-downloader-jabibi.herokuapp.com"
+            ? "https://youtube-downloader-free.herokuapp.com/"
             : "http://localhost:3000",
       },
     ],
