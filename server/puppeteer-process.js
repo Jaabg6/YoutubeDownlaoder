@@ -39,7 +39,7 @@ async function sendUrl(idUrl) {
   await page.goto(`https://api.vevioz.com/api/button/mp3/${idUrl}`);
   //sleep for 2 seconds
   await page.waitForSelector("body > div > div > div > div")
-
+  await delay(2000);
   //get the all  href of buttons
   const link = await page.evaluate(() => {
     AllHref = [];
