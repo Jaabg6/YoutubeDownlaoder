@@ -13,25 +13,25 @@
           <transition name="fade">
             <div
               class="card w-md-50 bg-2"
-              v-if="this.videoInfo != '' && this.statusProcess === false"
+              v-if="videoInfo != '' && this.statusProcess === false"
             >
               <div class="container">
                 <div class="row">
                   <div class="col-md-5 col-12 my-3">
                     <img
                       :src="
-                        this.videoInfo.thumbnails[
-                          this.videoInfo.thumbnails.length - 1
+                        videoInfo.thumbnails[
+                          videoInfo.thumbnails.length - 1
                         ].url
                       "
                       v-bind:alt="
-                        'Descargar ' + this.videoInfo.title + ' mp3 gratis'
+                        'Descargar ' + videoInfo.title + ' mp3 gratis'
                       "
                       class="img-fluid"
                     />
                     <!-- <div v-if="this.AnimationDownloading">Hi</div> -->
                     <div
-                      v-if="this.statusProcess == false"
+                      v-if="this.statusProcess == true"
                       class="spinner-grow text-danger mt-5"
                       role="status"
                     >
@@ -39,19 +39,19 @@
                     </div>
                   </div>
                   <div class="card-body col-7">
-                    <!-- <p class="h1">{{ this.videoInfo }}</p> -->
+                    <!-- <p class="h1">{{ videoInfo }}</p> -->
                     <p
                       class="font-weight-bold d-flex justify-content-left text-left"
                     >
-                      {{ this.videoInfo.title }}
+                      {{ videoInfo.title }}
                     </p>
 
                     <p class="h6 d-flex justify-content-left mb-3">
-                      Duracion: {{ this.videoDuration }}
+                      Duracion: {{ duration }}
                     </p>
 
                     <a
-                      :href="this.downloadLink"
+                      @click="openLink()"
                       download=""
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
@@ -261,8 +261,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import CardLoading from "../components/CardLoading";
-var format = require("format-duration");
-// import { mapState, mapGetters } from "vuex";
+
+import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "Home",
@@ -312,22 +312,13 @@ export default {
     console.log("🚀 ~ file: index.vue ~ line 319 ~ this.socket.on ~ videoInfo", videoInfo)
 
       
-      // this.videoInfo = videoInfo.videoInfo;
       this.$store.commit("setVideoInfo", videoInfo.videoInfo);
-      // this.videoDuration = format(Number(videoInfo.videoInfo.duration) * 1000);
-
-      // this.downloadLink = videoInfo.link;
+      this.$store.commit("setDownloadLink", videoInfo.link);
+      
       this.statusProcess = false;
     });
   },
   methods: {
-    
-    // StartAnimationDownloading() {
-    //   this.AnimationDownloading = true;
-    //   setTimeout(() => {
-    //     this.AnimationDownloading = false;
-    //   }, 5000);
-    // },
 
     scrollBehavior() {
       return { x: 0, y: 0 };
@@ -344,7 +335,7 @@ export default {
       }, 1000);
     },
     ShowDonwloadURL(url) {
-      this.downloadLink = url;
+      // this.downloadLink = url;
       this.statusProcess = false;
       // console.log(url + "se muestra");
     },
@@ -375,7 +366,7 @@ export default {
       if (this.statusProcess === false) {
         this.getJustID();
       } else {
-        this.errorWaitingResponse();
+        this.errorWaiting();
       }
     },
 
@@ -394,8 +385,12 @@ export default {
         }
     },
 
+    openLink(){
+       window.open(this.downloadLink, "_blank");
+    },
+
     
-    errorWaitingResponse(){
+    errorWaiting(){
         this.errorWaitingResponse = true;
         setTimeout(() => {
           this.errorLinkMessage = false;
@@ -412,13 +407,13 @@ export default {
   computed: {
     ...mapState({
       videoInfo: state => state.videoInfo,
+      downloadLink: state => state.downloadLink
     }),
 
     ...mapGetters({
       thumbnails : 'getThumbnails',
       title   : 'getTitleVideo',
-      duration   : 'getVideoDuration',
-      downloadLink   : 'getDownloadLink',
+      duration   : 'getVideoDuration'
     }),
   }
 };
