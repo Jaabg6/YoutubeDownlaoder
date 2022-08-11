@@ -2,18 +2,7 @@
   <div class="home">
     <!-- Navbar -->
     <Navbar />
-
     <!-- Navbar -->
-
-    <!-- para test -->
-    <!-- <div class="alert alert-danger" role="alert">
-      <span
-        class="glyphicon glyphicon-exclamation-sign"
-        aria-hidden="true"
-      ></span>
-      <span class="sr-only">Error: </span>Se ha producido un error. ¡Inténtalo
-      de nuevo!
-    </div> -->
 
     <div class="container">
       <SearchBar />
@@ -22,7 +11,6 @@
         <div class="d-flex justify-content-center mb-5">
           <CardLoading />
           <transition name="fade">
-            
             <div
               class="card w-md-50 bg-2"
               v-if="this.videoInfo != '' && this.statusProcess === false"
@@ -42,9 +30,13 @@
                       class="img-fluid"
                     />
                     <!-- <div v-if="this.AnimationDownloading">Hi</div> -->
-                    <div v-if="this.AnimationDownloading" class="spinner-grow text-danger mt-5" role="status">
-  <span class="sr-only">Loading...</span>
-</div>
+                    <div
+                      v-if="this.statusProcess == false"
+                      class="spinner-grow text-danger mt-5"
+                      role="status"
+                    >
+                      <span class="sr-only">Loading...</span>
+                    </div>
                   </div>
                   <div class="card-body col-7">
                     <!-- <p class="h1">{{ this.videoInfo }}</p> -->
@@ -59,53 +51,12 @@
                     </p>
 
                     <a
-                      :href="this.downloadlink[0]"
-                     
-                      @click="StartAnimationDownloading"
+                      :href="this.downloadLink"
                       download=""
                       class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
                     >
-                    Descargar Ahora
+                      Descargar Ahora
                     </a>
-                    <a
-                      :href="this.downloadlink[1]"
-                      target='_blank'
-                      v-if="this.downloadlink[1]"
-                      @click="StartAnimationDownloading"
-
-                      
-                      download=""
-                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
-                    >
-                    Descargar Ahora {{ this.downloadlink[1].substr(51,3)}} kbps
-                    </a>
-                    <a
-                      :href="this.downloadlink[2]"
-                      v-if="this.downloadlink[2]"
-                      target='_blank'
-                      @click="StartAnimationDownloading"
-                      
-                      download=""
-                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
-                    >
-                    Descargar Ahora {{ this.downloadlink[2].substr(51,3)}} kbps
-                    </a>
-                    <a
-                      :href="this.downloadlink[3]"
-                      v-if="this.downloadlink[3]"
-                      target='_blank'
-                      @click="StartAnimationDownloading"
-
-                      download=""
-                      class="btn bg-3 btn-block text-white mb-1 d-flex align-items-end"
-                    >
-                    Descargar Ahora {{ this.downloadlink[3].substr(51,3)}} kbps
-                    </a>
-
-                     
-
-
-                    
                   </div>
                 </div>
               </div>
@@ -153,7 +104,9 @@
               </ul>
             </nav>
           </div>
-          <div class="container">
+         
+         
+         <div class="container">
             <div class="row py-5">
               <div class="col-12 col-md-7 py-4">
                 <!-- Pass PC -->
@@ -291,7 +244,8 @@
                 </transition>
               </div>
             </div>
-          </div>
+        </div>
+        
         </div>
       </div>
     </div>
@@ -308,15 +262,17 @@ import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import CardLoading from "../components/CardLoading";
 var format = require("format-duration");
+import { mapState, mapGetters } from "vuex";
+
 export default {
   name: "Home",
   data() {
     return {
       idUrl: "",
       urlVideo: "",
-      videoInfo: "",
-      videoDuration: 0,
-      downloadlink: "",
+      // videoInfo: "",
+      // videoDuration: 0,
+      // downloadLink: "",
       statusProcess: false,
       AnimationDownloading: false,
       DownloadPreferences: "PC",
@@ -325,6 +281,7 @@ export default {
       passN3: false,
       rules: "",
       countdown: 0,
+
       errorLinkMessage: false,
       errorVideoNoEncontrado: false,
       errorWaitingResponse: false,
@@ -344,16 +301,6 @@ export default {
       name: "main", // select "main" socket from nuxt.config.js - we could also skip this because "main" is the default socket
     });
 
-    // Get a reference to the storage service, which is used to create references in your storage bucket
-
-    this.socket.on("connect", () => {
-      console.log("socket-io-client conected");
-    });
-
-    this.socket.on("event-frontend", () => {
-      console.log("Backend Working");
-    });
-
     this.socket.on("VideoNoEncontrado", () => {
       this.errorVideoNoEncontrado = true;
       setTimeout(() => {
@@ -361,50 +308,33 @@ export default {
       }, 5000);
     });
 
-    this.socket.on("urlDownload", (urlForDownload) => {
-      this.downloadlink = urlForDownload;
-      this.statusProcess = false;
-
-      // console.log("url: " + urlForDownload);
-    });
-
-    // io.emit("sendInfoMp3", DireccionVideo);
-
     this.socket.on("infoVideo", (videoInfo) => {
-      this.videoInfo = videoInfo;
-      this.videoDuration = format(videoInfo.duration * 1000);
-      // console.log(
-      //   "info: " + videoInfo.title,
-      //   videoInfo.duration,
-      //   videoInfo.thumbnails
-      // );
+    console.log("🚀 ~ file: index.vue ~ line 319 ~ this.socket.on ~ videoInfo", videoInfo)
+
+      
+      // this.videoInfo = videoInfo.videoInfo;
+      this.$store.commit("setVideoInfo", videoInfo.videoInfo);
+      // this.videoDuration = format(Number(videoInfo.videoInfo.duration) * 1000);
+
+      // this.downloadLink = videoInfo.link;
+      this.statusProcess = false;
     });
   },
   methods: {
+    
+    // StartAnimationDownloading() {
+    //   this.AnimationDownloading = true;
+    //   setTimeout(() => {
+    //     this.AnimationDownloading = false;
+    //   }, 5000);
+    // },
 
-    StartAnimationDownloading(){
-      this.AnimationDownloading = true;
-      setTimeout(() => {
-      this.AnimationDownloading = false;
-        
-      }, 5000);
-    },
-
-    openLink(){
-       var bro = this.$refs.buttonDonwloadRef.contentWindow.document.getElementById('#mediaDownload');
-       
-       console.log(bro)
-      console.log("si entra", this.$refs.buttonDonwloadRef)
-    },
     scrollBehavior() {
       return { x: 0, y: 0 };
     },
-    // startAgain() {
-    //   // this.urlVideo = "";
-    //   // this.downloadlink = "";
-    //   console.log("hi start again");
-    // },
+
     CountDownTimer() {
+      this.countdown = 0;
       var myInterval = setInterval(() => {
         this.countdown = this.countdown + 1;
 
@@ -414,19 +344,11 @@ export default {
       }, 1000);
     },
     ShowDonwloadURL(url) {
-      this.downloadlink = url;
+      this.downloadLink = url;
       this.statusProcess = false;
       // console.log(url + "se muestra");
     },
-    // obtenerLink(RefFile){
-    //   RefFile.getDownloadURL().then(function(url) {
-    //                   // `url` is the download URL for 'mp3videos/stars.jpg'
-    //                     console.log(url);
-    //                     this.downloadlink = url;
-    //                 }).catch(function(error) {
-    //                   // Handle any errors
-    //                 });
-    // },
+
     onPaste(evt) {
       console.log("on paste", evt);
     },
@@ -451,55 +373,66 @@ export default {
 
     async sendUrl() {
       if (this.statusProcess === false) {
-        var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+        this.getJustID();
+      } else {
+        this.errorWaitingResponse();
+      }
+    },
+
+    getJustID(){
+      var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
         if (this.urlVideo.match(p)) {
-          console.log("hi you want download" + this.urlVideo);
-          this.videoInfo = "";
-          this.videoDuration = 0;
-          this.downloadlink = "";
           var idUrl = this.urlVideo.slice(-11);
-          this.idUrl = idUrl
-          // console.log("la id es: " + this.urlVideo.slice(-11));
+          this.idUrl = idUrl;
+
           this.socket.emit("sendUrl", idUrl);
           this.statusProcess = true;
-          this.countdown = 0;
+
           this.CountDownTimer();
         } else {
-          // console.log("no funciona esta shit");
-          console.log("Link invalido");
-          this.errorLinkMessage = true;
-          setTimeout(() => {
-            this.errorLinkMessage = false;
-          }, 4000);
+          this.errorMessage();
         }
-      } else {
+    },
+
+    
+    errorWaitingResponse(){
         this.errorWaitingResponse = true;
         setTimeout(() => {
           this.errorLinkMessage = false;
         }, 4000);
-      }
-
-      // if (
-      //   this.urlVideo.includes(
-      //     "https://www.youtube.com/watch?v=" || "https://youtu.be/"
-      //   )
-      // ) {
-      // } else {
-
-      // }
     },
+
+    errorMessage(){
+      this.errorLinkMessage = true;
+      setTimeout(() => {
+        this.errorLinkMessage = false;
+      }, 4000);
+    }
   },
+  computed: {
+    ...mapState({
+      videoInfo: state => state.videoInfo,
+    }),
+
+    ...mapGetters({
+      thumbnails : 'getThumbnails',
+      title   : 'getTitleVideo',
+      duration   : 'getVideoDuration',
+      downloadLink   : 'getDownloadLink',
+    }),
+  }
 };
 </script>
 
 <style>
-.media-type-mp3-320{
+.media-type-mp3-320 {
   background: rgb(255, 6, 6) !important;
-  color:rgb(255, 6, 6) !important;
+  color: rgb(255, 6, 6) !important;
 }
-.d-opacity{
+.d-opacity {
   /* filter: drop-shadow(4px 4px red); */
-  filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-1500deg) saturate(600%) contrast(0.8);
+  filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-1500deg)
+    saturate(600%) contrast(0.8);
   /* filter: grayscale(2); */
   /* width: 100%; */
   /* height: 10px; */
@@ -540,10 +473,10 @@ export default {
 }
 
 .bounce-enter-active {
-  StartAnimation: bounce-in 0.5s;
+  startanimation: bounce-in 0.5s;
 }
 .bounce-leave-active {
-  StartAnimation: bounce-in 0s reverse;
+  startanimation: bounce-in 0s reverse;
 }
 @keyframes bounce-in {
   0% {
