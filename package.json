@@ -1,9 +1,6 @@
 {
   "name": "youtube-downloader-jabibi",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.13.0"
-  },
   "description": "Description",
   "author": "Jabibi",
   "private": false,
@@ -24,11 +21,8 @@
     "format-duration": "^1.4.0",
     "nuxt": "^2.12.2",
     "nuxt-socket-io": "^1.1.22",
-    "puppeteer": "^15.3.2",
     "socket.io": "^4.1.3",
     "socket.io-client": "^4.1.3",
-    "vue": "^3.2.37",
-    "vuex": "^4.0.2",
     "ytdl-core": "^4.9.1"
   },
   "devDependencies": {

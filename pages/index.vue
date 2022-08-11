@@ -262,7 +262,7 @@ import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import CardLoading from "../components/CardLoading";
 var format = require("format-duration");
-import { mapState, mapGetters } from "vuex";
+// import { mapState, mapGetters } from "vuex";
 
 export default {
   name: "Home",
