@@ -1,0 +1,91 @@
+0000000000000000000000000000000000000000 69224bfbf1665b43e9469c5096c92cfb8f890342 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630172089 -0500	clone: from https://github.com/Jaabg6/YoutubeDownlaoder-3Party.git
+69224bfbf1665b43e9469c5096c92cfb8f890342 8c000935cdb700d53e76cc5c4d2497962a221a58 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630340060 -0500	commit: first version of this 3party downloader
+8c000935cdb700d53e76cc5c4d2497962a221a58 1729db9cb3b474a560fd751b0c186b9ec086da35 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630342032 -0500	commit: backend listener
+1729db9cb3b474a560fd751b0c186b9ec086da35 a66ec8fbe348a4f377068625a775b053cfb18c50 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630342478 -0500	commit: build pack installed
+a66ec8fbe348a4f377068625a775b053cfb18c50 39ec6ec0f56405f5ce981e1da395db3380401765 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630343068 -0500	commit: brocolino
+39ec6ec0f56405f5ce981e1da395db3380401765 2d674e7ad0e0fb6811c0315c0ffd844d20996e2b Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630343479 -0500	commit: buildpack and sandbox
+2d674e7ad0e0fb6811c0315c0ffd844d20996e2b 18de9a38779cc6a9a3f9646b258a25795bf556db Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630345992 -0500	commit: broadcast
+18de9a38779cc6a9a3f9646b258a25795bf556db 1fcc1a30275af24df966ff37f899fadd3f6305a6 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630346327 -0500	commit: logo and name fixed
+1fcc1a30275af24df966ff37f899fadd3f6305a6 eed46d388c68a7ad10a427464f27cd10620b5ada Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630359185 -0500	commit: terminado el mp3 converter
+eed46d388c68a7ad10a427464f27cd10620b5ada 2e1110140c924cdccaa27431641eb0eab7648e4b Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630363958 -0500	commit: hasta cuando nono
+2e1110140c924cdccaa27431641eb0eab7648e4b 59af4767b55205f35225d75704a176b4b0d78331 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630509168 -0500	commit: solucionado imagen
+59af4767b55205f35225d75704a176b4b0d78331 f8577d1246559eff8328ff5e23398c88156b5403 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1630509636 -0500	commit: arreglado problema lucho
+f8577d1246559eff8328ff5e23398c88156b5403 3f2035dd5b48028486aa9081cd715d438866ca52 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1631552116 -0500	commit: ahora sin puppeteer
+3f2035dd5b48028486aa9081cd715d438866ca52 1a2cbaa0011ff5bd8c43b84b3475e009a06a3281 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1635182997 -0500	commit: solucionado ultimo problema
+1a2cbaa0011ff5bd8c43b84b3475e009a06a3281 8ebb01dab6e2ac52bfcb81787f4798ce6013ed46 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1635183860 -0500	commit: target blank
+8ebb01dab6e2ac52bfcb81787f4798ce6013ed46 ee43b62091ecfd4d947e1dae66188bb88c51d96b Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1635192457 -0500	commit: otra api mas
+ee43b62091ecfd4d947e1dae66188bb88c51d96b 27dbba7535c4f28df27e36b69f0252d994c24269 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1635192829 -0500	commit: sin blank
+27dbba7535c4f28df27e36b69f0252d994c24269 658456097cc0ba6ad0b753de4ef944882ddb3d40 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1642269553 -0500	commit: bro
+658456097cc0ba6ad0b753de4ef944882ddb3d40 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1642269639 -0500	commit: bro
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1642270145 -0500	checkout: moving from main to master
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657571893 -0500	checkout: moving from master to youtubedownloader
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572157 -0500	checkout: moving from youtubedownloader to main
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 14aeb7b4530d3a7e714031f01706f7a97ba768bd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572179 -0500	commit: bro
+14aeb7b4530d3a7e714031f01706f7a97ba768bd 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572187 -0500	checkout: moving from main to youtubedownloader
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 14aeb7b4530d3a7e714031f01706f7a97ba768bd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572193 -0500	checkout: moving from youtubedownloader to main
+14aeb7b4530d3a7e714031f01706f7a97ba768bd 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572238 -0500	commit: cleaning
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572244 -0500	checkout: moving from main to youtubedownloader
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572249 -0500	checkout: moving from youtubedownloader to main
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572892 -0500	checkout: moving from main to master
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572901 -0500	checkout: moving from master to main
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657572948 -0500	checkout: moving from main to master
+8b4c29d8d740f5b5c0762befe7d83ab0c898cbf4 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657573151 -0500	checkout: moving from master to main
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657573422 -0500	checkout: moving from main to master
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657573685 -0500	checkout: moving from master to main
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657574161 -0500	checkout: moving from main to master
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 976ac45d7922296a7f279fbb00efda088bae1200 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657575328 -0500	commit: bro
+976ac45d7922296a7f279fbb00efda088bae1200 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657575704 -0500	checkout: moving from master to main
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 976ac45d7922296a7f279fbb00efda088bae1200 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657578803 -0500	checkout: moving from main to master
+976ac45d7922296a7f279fbb00efda088bae1200 4e7d75491a81250c6cff37fdab8f3c9e044a2658 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657579607 -0500	checkout: moving from master to main
+4e7d75491a81250c6cff37fdab8f3c9e044a2658 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657579652 -0500	commit: fuck
+8d122d903020b34ee9a1ef670f0a7b27f0456006 976ac45d7922296a7f279fbb00efda088bae1200 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657579845 -0500	checkout: moving from main to master
+976ac45d7922296a7f279fbb00efda088bae1200 17ac404992b6d0024ab555b78c1f2af14e037287 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657579853 -0500	commit: la puta madre
+17ac404992b6d0024ab555b78c1f2af14e037287 efc357a8e8324d4d2a0a0c8817502f97ef2cba87 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657580380 -0500	commit: listo
+efc357a8e8324d4d2a0a0c8817502f97ef2cba87 2008060e9c36f233c2903d0f195eaf050b68235e Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1657731580 -0500	commit: delay 2
+2008060e9c36f233c2903d0f195eaf050b68235e 2008060e9c36f233c2903d0f195eaf050b68235e Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660174495 -0500	checkout: moving from master to rapidapi
+2008060e9c36f233c2903d0f195eaf050b68235e 3e9db7f238e3afd91a614d6c55af848a0bcfbdcd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660177450 -0500	commit: partially
+3e9db7f238e3afd91a614d6c55af848a0bcfbdcd 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660177458 -0500	checkout: moving from rapidapi to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 2008060e9c36f233c2903d0f195eaf050b68235e Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660177504 -0500	checkout: moving from main to master
+2008060e9c36f233c2903d0f195eaf050b68235e 3e9db7f238e3afd91a614d6c55af848a0bcfbdcd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660177618 -0500	checkout: moving from master to rapidapi
+3e9db7f238e3afd91a614d6c55af848a0bcfbdcd 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660177655 -0500	checkout: moving from rapidapi to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 3e9db7f238e3afd91a614d6c55af848a0bcfbdcd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660177744 -0500	checkout: moving from main to rapidapi
+3e9db7f238e3afd91a614d6c55af848a0bcfbdcd 4ea652abc0f4ac7aaed35d57978a314a9b157586 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660187516 -0500	commit: bro
+4ea652abc0f4ac7aaed35d57978a314a9b157586 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660187521 -0500	checkout: moving from rapidapi to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 4ea652abc0f4ac7aaed35d57978a314a9b157586 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660187531 -0500	checkout: moving from main to rapidapi
+4ea652abc0f4ac7aaed35d57978a314a9b157586 ae94eee34d9dc1fe7e6326d7fcc180bd26403092 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660188062 -0500	commit: vuex fail
+ae94eee34d9dc1fe7e6326d7fcc180bd26403092 493e4c417e4a8f121aca9e8963bfd0ab443126fd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660188415 -0500	commit: vuex fail
+493e4c417e4a8f121aca9e8963bfd0ab443126fd 3e9db7f238e3afd91a614d6c55af848a0bcfbdcd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660188474 -0500	checkout: moving from rapidapi to working
+3e9db7f238e3afd91a614d6c55af848a0bcfbdcd 3e9db7f238e3afd91a614d6c55af848a0bcfbdcd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660189643 -0500	reset: moving to HEAD
+3e9db7f238e3afd91a614d6c55af848a0bcfbdcd 493e4c417e4a8f121aca9e8963bfd0ab443126fd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660189643 -0500	checkout: moving from working to rapidapi
+493e4c417e4a8f121aca9e8963bfd0ab443126fd 493e4c417e4a8f121aca9e8963bfd0ab443126fd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660190359 -0500	reset: moving to HEAD
+493e4c417e4a8f121aca9e8963bfd0ab443126fd 3e9db7f238e3afd91a614d6c55af848a0bcfbdcd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660190360 -0500	checkout: moving from rapidapi to working
+3e9db7f238e3afd91a614d6c55af848a0bcfbdcd 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660190379 -0500	checkout: moving from working to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 493e4c417e4a8f121aca9e8963bfd0ab443126fd Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660190398 -0500	checkout: moving from main to rapidapi
+493e4c417e4a8f121aca9e8963bfd0ab443126fd 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192371 -0500	commit: terminado
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192446 -0500	checkout: moving from rapidapi to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192465 -0500	checkout: moving from main to rapidapi
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192601 -0500	checkout: moving from rapidapi to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192622 -0500	checkout: moving from main to rapidapi
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 2008060e9c36f233c2903d0f195eaf050b68235e Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192638 -0500	checkout: moving from rapidapi to master
+2008060e9c36f233c2903d0f195eaf050b68235e 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192688 -0500	checkout: moving from master to rapidapi
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 2008060e9c36f233c2903d0f195eaf050b68235e Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192954 -0500	checkout: moving from rapidapi to master
+2008060e9c36f233c2903d0f195eaf050b68235e 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660192965 -0500	merge rapidapi: Fast-forward
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193149 -0500	checkout: moving from master to rapidapi
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193213 -0500	checkout: moving from rapidapi to master
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 8d122d903020b34ee9a1ef670f0a7b27f0456006 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193532 -0500	checkout: moving from master to main
+8d122d903020b34ee9a1ef670f0a7b27f0456006 0250db0a35f111787c91f1ce201d4acb4ceb52b8 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193645 -0500	commit (merge): Merge branch 'master'
+0250db0a35f111787c91f1ce201d4acb4ceb52b8 4173064ca6e51a2a010262f7a150bbbf9bf237f5 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193665 -0500	pull --ff --progress origin: Merge made by the 'ort' strategy.
+4173064ca6e51a2a010262f7a150bbbf9bf237f5 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193731 -0500	checkout: moving from main to master
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 4173064ca6e51a2a010262f7a150bbbf9bf237f5 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193734 -0500	checkout: moving from master to main
+4173064ca6e51a2a010262f7a150bbbf9bf237f5 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660193742 -0500	checkout: moving from main to master
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 4173064ca6e51a2a010262f7a150bbbf9bf237f5 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660194035 -0500	checkout: moving from master to main
+4173064ca6e51a2a010262f7a150bbbf9bf237f5 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660194296 -0500	checkout: moving from main to master
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660194307 -0500	checkout: moving from master to rapidapi
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 4173064ca6e51a2a010262f7a150bbbf9bf237f5 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660194521 -0500	checkout: moving from rapidapi to main
+4173064ca6e51a2a010262f7a150bbbf9bf237f5 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660194720 -0500	checkout: moving from main to master
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 4173064ca6e51a2a010262f7a150bbbf9bf237f5 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660195068 -0500	checkout: moving from master to main
+4173064ca6e51a2a010262f7a150bbbf9bf237f5 995bfb659a943d5e2d9299bd2d6f0f07039deb6b Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660195235 -0500	commit: engine update
+995bfb659a943d5e2d9299bd2d6f0f07039deb6b fdfb5052777f57c276f2b8eefe01b77f828f5cea Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660195574 -0500	commit: bro funciona pls
+fdfb5052777f57c276f2b8eefe01b77f828f5cea 43b50ca30cb7254d6862e95859edac85128cd6b6 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660195766 -0500	commit: ready to update
+43b50ca30cb7254d6862e95859edac85128cd6b6 12d4d6e41def037ef577d8074803ded2d7cc5b5c Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660196129 -0500	checkout: moving from main to master
+12d4d6e41def037ef577d8074803ded2d7cc5b5c 43b50ca30cb7254d6862e95859edac85128cd6b6 Javier Arcila <48869450+Jaabg6@users.noreply.github.com> 1660196141 -0500	checkout: moving from master to main
