@@ -2,7 +2,8 @@
   "name": "youtube-downloader-jabibi",
   "version": "1.0.0",
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": "8.1.0"
   },
   "description": "Description",
   "author": "Jabibi",
