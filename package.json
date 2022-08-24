@@ -1,6 +1,10 @@
 {
   "name": "youtube-downloadermp3",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.1.0"
+  },
   "description": "Descarga musica de youtube ahora",
   "author": "Jabibi",
   "private": false,
