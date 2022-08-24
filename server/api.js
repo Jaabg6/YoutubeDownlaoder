@@ -42,8 +42,6 @@ async function sendUrl(idUrl, socket) {
   })
   
   const link = await axios.request(options).then(function (response) {
-  // console.log("🚀 ~ file: api.js ~ line 45 ~ link ~ response status", response.data.status)
-  // console.log("🚀 ~ file: api.js ~ line 46 ~ link ~ response", response.data)
     
     if(response.data.status == "ok"){
       return response.data.link
@@ -56,7 +54,7 @@ async function sendUrl(idUrl, socket) {
     console.log(error)
   });
   
-  console.log({ link, videoInfo });
+  // console.log({ link, videoInfo });
   return { link, videoInfo };
 
 };

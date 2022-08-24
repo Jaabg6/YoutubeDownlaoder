@@ -1,4 +1,6 @@
 module.exports = {
+  telemetry: false,
+
   /*
    ** Headers of the page
    */

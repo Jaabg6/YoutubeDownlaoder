@@ -1,11 +1,7 @@
 {
-  "name": "youtube-downloader-jabibi",
+  "name": "youtube-downloadermp3",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.x",
-    "npm": "8.1.0"
-  },
-  "description": "Description",
+  "description": "Descarga musica de youtube ahora",
   "author": "Jabibi",
   "private": false,
   "scripts": {
@@ -17,14 +13,15 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "axios": "^0.21.4",
-    "cheerio": "^1.0.0-rc.10",
+    "axios": "^0.27.2",
     "cross-env": "^5.2.0",
     "dotenv": "^16.0.1",
     "express": "^4.16.4",
-    "format-duration": "^1.4.0",
-    "nuxt": "^2.12.2",
-    "nuxt-socket-io": "^1.1.22",
+    "core-js": "^3.9.1",
+    "format-duration": "^2.0.0",
+    "fs": "0.0.1-security",
+    "nuxt": "^2.15.3",
+    "nuxt-socket-io": "^1.1.14",
     "socket.io": "^4.1.3",
     "socket.io-client": "^4.1.3",
     "ytdl-core": "^4.9.1"
