@@ -5,10 +5,9 @@ const dotenv = require('dotenv').config({
 
 const ytdl = require("ytdl-core");
 const axios = require("axios");
-const API_KEY = dotenv.API_KEY
-const API_HOST = dotenv.API_HOST
 
-
+const API_KEY = process.env.NODE_ENV === "production" ? process.env.API_KEY : dotenv.API_KEY;
+const API_HOST = process.env.NODE_ENV === "production" ? process.env.API_HOST : dotenv.API_HOST;
 
 
 //initialize the puppeteer browser
